@@ -1,0 +1,50 @@
+.numy
+    width: 100%
+    height: 100%
+
+    .game
+        --game-unit: 10px
+
+        box-sizing: border-box
+        padding: var(--game-unit)
+
+        .table-container
+            box-sizing: border-box
+            border: var(--game-unit) solid black
+            padding: var(--game-unit)
+            height: 100%
+            font-size: 20px
+
+            .table
+                display: grid
+                grid-auto-rows: calc(var(--game-unit) * 7)
+                grid-template-columns: repeat(9, 1fr)
+                grid-gap: var(--game-unit)
+                gap: var(--game-unit)
+                font-family: Blocktopia
+                font-size: calc(var(--game-unit) * 5)
+                text-align: center
+
+                div
+                    position: relative
+                    box-sizing: border-box
+                    border: var(--game-unit) solid black
+                    padding-top: calc(var(--game-unit) /3.5)
+
+                .selected
+                    color: #9AA680
+                    background: black
+
+                .empty
+                    border: none
+
+                    &::before
+                        --margin: var(--game-unit)
+
+                        background: rgba(0, 0, 0, 0.3)
+                        content: ''
+                        position: absolute
+                        left: var(--margin)
+                        top: var(--margin)
+                        right: var(--margin)
+                        bottom: var(--margin)
